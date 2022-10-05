@@ -19,4 +19,12 @@ public class HelloController {
 	public String greet(@RequestParam String name) {
 		return "Hello " + name;
 	}
+	
+	@RequestMapping("/add")
+	@ResponseBody
+	public String greet(@RequestParam String operand1, @RequestParam String operand2) {
+		int x = Integer.parseInt(operand1);
+		int y = Integer.parseInt(operand2);
+		return "" + operand1 + " + " + operand2 + " = " + (x + y);
+	}
 }
